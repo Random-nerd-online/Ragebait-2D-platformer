@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c2gymiwqubj2d"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q26tn"]
+a = Vector2(934, -180)
+b = Vector2(-352, -181)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uep3k"]
+a = Vector2(0, -359)
+b = Vector2(0, 376)
+
+[node name="Camera and deadzone" type="Node2D" unique_id=1867240662]
+
+[node name="Deadzone2" type="Area2D" parent="." unique_id=1274836857]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Deadzone2" unique_id=283248]
+position = Vector2(-301, 555)
+shape = SubResource("SegmentShape2D_q26tn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Deadzone2" unique_id=454175560]
+position = Vector2(632, 0)
+shape = SubResource("SegmentShape2D_uep3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deadzone2" unique_id=940517512]
+position = Vector2(-653, -1)
+shape = SubResource("SegmentShape2D_uep3k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Deadzone2" unique_id=1396849584]
+position = Vector2(-301, -179)
+shape = SubResource("SegmentShape2D_q26tn")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=120720026]

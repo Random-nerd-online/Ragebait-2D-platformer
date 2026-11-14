@@ -5,6 +5,14 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uep3k"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_q26tn"]
+a = Vector2(934, -180)
+b = Vector2(-352, -181)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_uep3k"]
+a = Vector2(0, -359)
+b = Vector2(0, 376)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e5tcs"]
 texture = ExtResource("2_0i0vs")
 0:0/next_alternative_id = 2
@@ -155,7 +163,14 @@ texture = ExtResource("2_0i0vs")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_e5tcs")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47s1u"]
+size = Vector2(13.999998, 21.956512)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cv1r"]
+size = Vector2(20.479904, 128.00005)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q26tn"]
+size = Vector2(2.800002, 20)
 
 [node name="Node2D" type="Node2D" unique_id=1733538206]
 
@@ -174,16 +189,137 @@ shape = SubResource("RectangleShape2D_uep3k")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player" unique_id=1614926680]
 
+[node name="Camera and deadzone2" type="Node2D" parent="Player/AudioStreamPlayer2D" unique_id=1867240662]
+position = Vector2(64.96625, 6.357357)
+scale = Vector2(0.21441005, 0.19866733)
+
+[node name="Deadzone2" type="Area2D" parent="Player/AudioStreamPlayer2D/Camera and deadzone2" unique_id=1274836857]
+collision_mask = 2
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Player/AudioStreamPlayer2D/Camera and deadzone2/Deadzone2" unique_id=283248]
+position = Vector2(-301, 555)
+shape = SubResource("SegmentShape2D_q26tn")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/AudioStreamPlayer2D/Camera and deadzone2/Deadzone2" unique_id=454175560]
+position = Vector2(632, 0)
+shape = SubResource("SegmentShape2D_uep3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/AudioStreamPlayer2D/Camera and deadzone2/Deadzone2" unique_id=940517512]
+position = Vector2(-653, -1)
+shape = SubResource("SegmentShape2D_uep3k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Player/AudioStreamPlayer2D/Camera and deadzone2/Deadzone2" unique_id=1396849584]
+position = Vector2(-301, -179)
+shape = SubResource("SegmentShape2D_q26tn")
+
+[node name="Timer" type="Timer" parent="Player/AudioStreamPlayer2D/Camera and deadzone2/Deadzone2" unique_id=1895646114]
+
+[node name="Camera" type="Camera2D" parent="Player/AudioStreamPlayer2D/Camera and deadzone2" unique_id=120720026]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=906846668]
 tile_map_data = PackedByteArray("AAAJABoAAAABAAAAAAAKABoAAAACAAAAAAALABoAAAADAAAAAAAMABoAAAAEAAAAAAANABoAAAAFAAAAAAAOABoAAAAGAAAAAAAPABoAAAABAAAAAAAQABoAAAACAAAAAAARABoAAAADAAAAAAASABoAAAAEAAAAAAATABoAAAAFAAAAAAAUABoAAAAGAAAAAAAVABoAAAABAAAAAAAWABoAAAACAAAAAAAXABoAAAADAAAAAAAYABoAAAAEAAAAAAAZABoAAAAFAAAAAAAaABoAAAAGAAAAAAAbABoAAAABAAAAAAAcABoAAAACAAAAAAAdABoAAAADAAAAAAAeABoAAAAEAAAAAAAfABoAAAAFAAAAAAAgABoAAAAGAAAAAAAhABoAAAABAAAAAAAiABoAAAACAAAAAAAjABoAAAADAAAAAAAkABoAAAAEAAAAAAAlABoAAAAFAAAAAAAmABoAAAAGAAAAAAAnABoAAAABAAAAAAAoABoAAAACAAAAAAApABoAAAADAAAAAAAqABoAAAAEAAAAAAArABoAAAAFAAAAAAAsABoAAAAGAAAAAAAtABoAAAABAAAAAAAuABoAAAACAAAAAAAvABoAAAADAAAAAAAwABoAAAAEAAAAAAAxABoAAAAFAAAAAAAyABoAAAAGAAAAAAAzABoAAAABAAAAAAA0ABoAAAACAAAAAAA1ABoAAAADAAAAAAA2ABoAAAAEAAAAAAA3ABoAAAAFAAAAAAA4ABoAAAAGAAAAAAA5ABoAAAABAAAAAAA6ABoAAAACAAAAAAA7ABoAAAADAAAAAAA8ABoAAAAEAAAAAAA9ABoAAAAFAAAAAAA+ABoAAAAGAAAAAAA5ABkAAAABAAAAAAA6ABkAAAACAAAAAAA7ABkAAAADAAAAAAA8ABkAAAAEAAAAAAA9ABkAAAAFAAAAAAA+ABkAAAAGAAAAAAA/ABkAAAABAAAAAABAABkAAAACAAAAAABBABkAAAADAAAAAABCABkAAAAEAAAAAABDABkAAAAFAAAAAABEABkAAAAGAAAAAABFABkAAAABAAAAAABGABkAAAACAAAAAABHABkAAAADAAAAAABIABkAAAAEAAAAAABJABkAAAAFAAAAAABKABkAAAAGAAAAAABLABkAAAABAAAAAABMABkAAAACAAAAAABNABkAAAADAAAAAABOABkAAAAEAAAAAABPABkAAAAFAAAAAABQABkAAAAGAAAAAABRABkAAAABAAAAAABSABkAAAACAAAAAABTABkAAAADAAAAAABUABkAAAAEAAAAAABVABkAAAAFAAAAAABWABkAAAABAAAAAABXABkAAAACAAAAAABYABkAAAADAAAAAABZABkAAAAEAAAAAABaABkAAAAFAAAAAABbABkAAAAGAAAAAABcABkAAAABAAAAAABdABkAAAACAAAAAABeABkAAAADAAAAAABfABkAAAAEAAAAAABgABkAAAAFAAAAAABhABkAAAAGAAAAAABcABoAAAABAAAAAABdABoAAAACAAAAAABeABoAAAADAAAAAABfABoAAAAEAAAAAABgABoAAAAFAAAAAABhABoAAAAGAAAAAABiABoAAAABAAAAAABjABoAAAACAAAAAABkABoAAAADAAAAAABlABoAAAAEAAAAAABmABoAAAAFAAAAAABnABoAAAAGAAAAAAA=")
 tile_set = SubResource("TileSet_uep3k")
 
 [node name="BounceBox" type="Area2D" parent="." unique_id=2101664933]
+position = Vector2(627, 366.00003)
+scale = Vector2(5, 2.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="BounceBox" unique_id=1246619295]
 position = Vector2(1.9073486e-06, 8.940697e-08)
 scale = Vector2(0.15625, 0.15624999)
 texture = ExtResource("2_0i0vs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceBox" unique_id=1320190522]
+[node name="Up" type="CollisionShape2D" parent="BounceBox" unique_id=828479328]
+position = Vector2(-0.19999695, -0.10864258)
+shape = SubResource("RectangleShape2D_47s1u")
+
+[node name="Right" type="CollisionShape2D" parent="BounceBox" unique_id=347464545]
+position = Vector2(8.400017, 0)
+scale = Vector2(0.15625, 0.15625)
+shape = SubResource("RectangleShape2D_8cv1r")
+
+[node name="Left" type="CollisionShape2D" parent="BounceBox" unique_id=1861603442]
+position = Vector2(-8.599998, 0)
 shape = SubResource("RectangleShape2D_q26tn")
+
+[node name="Game over screen" type="Control" parent="." unique_id=548449028]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 1156.0
+offset_bottom = 639.269
+
+[node name="Panel2" type="Panel" parent="Game over screen" unique_id=1177186597]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012
+anchor_top = 0.512
+anchor_right = 0.012
+anchor_bottom = 0.512
+offset_left = -4.7279997
+offset_top = 0.27825928
+offset_right = 306.272
+offset_bottom = 11.278259
+
+[node name="Game over title" type="Label" parent="Game over screen" unique_id=1552975427]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.18
+anchor_right = 0.5
+anchor_bottom = 0.18
+offset_left = -98.0
+offset_top = 97.32607
+offset_right = 86.0
+offset_bottom = 186.32608
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Press B" type="Label" parent="Game over screen" unique_id=542911230]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.50200003
+anchor_top = 0.354
+anchor_right = 0.50200003
+anchor_bottom = 0.354
+offset_left = -161.28802
+offset_top = 159.31126
+offset_right = 154.71198
+offset_bottom = 193.31126
+theme_override_font_sizes/font_size = 24
+text = "Press B to Bounce Back Bro"
+
+[node name="Game over quote" type="Label" parent="Game over screen" unique_id=1991423735]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.286
+anchor_top = 0.49100003
+anchor_right = 0.286
+anchor_bottom = 0.49100003
+offset_left = 5.815979
+offset_top = -1.4440918
+offset_right = 494.81598
+offset_bottom = 32.55591
+theme_override_font_sizes/font_size = 24
+text = "You see, that my mind is, too fast for eyes."
+
+[node name="Panel" type="Panel" parent="Game over screen" unique_id=1307118728]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.74
+anchor_top = 0.5
+anchor_right = 0.74
+anchor_bottom = 0.5
+offset_left = 0.44000244
+offset_top = 7.865509
+offset_right = 311.44
+offset_bottom = 18.865509
+
+[connection signal="body_entered" from="Player/AudioStreamPlayer2D/Camera and deadzone2/Deadzone2" to="Player" method="_on_deadzone_2_body_entered"]
+[connection signal="body_entered" from="BounceBox" to="Player" method="_on_bounce_box_body_entered"]
