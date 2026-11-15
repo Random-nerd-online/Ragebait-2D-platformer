@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://77tpascxlqny"]
+
+[ext_resource type="Texture2D" uid="uid://cgy7y0eplibo3" path="res://Screenshot 2026-11-15 113236.png" id="1_gt22q"]
+
+[node name="Game over screen" type="Control" unique_id=2065157603]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 5.0
+offset_right = 1153.0
+offset_bottom = 637.269
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1048206832]
+visible = false
+
+[node name="Screenshot20261115113236" type="Sprite2D" parent="CanvasLayer" unique_id=1133287236]
+texture_filter = 2
+position = Vector2(574.426, 310.49997)
+scale = Vector2(1.3111955, 1.3111954)
+texture = ExtResource("1_gt22q")
+
+[node name="Controls" type="Label" parent="CanvasLayer/Screenshot20261115113236" unique_id=1488439343]
+offset_left = -429.70407
+offset_top = 174.26846
+offset_right = -348.70407
+offset_bottom = 249.26846
+text = "A/<-: Left
+D/->: Right
+B: Restart "

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d4djr2wl2cjfs"]
+
+[ext_resource type="Texture2D" uid="uid://cwjrnpl5gwuew" path="res://Screenshot 2026-11-15 115259.png" id="1_u8o5d"]
+[ext_resource type="Texture2D" uid="uid://01immqceumch" path="res://Screenshot 2026-11-15 115754.png" id="2_hymk5"]
+
+[node name="Menu" type="Control" unique_id=1890199768]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = -24.0
+offset_right = 54.0
+offset_bottom = 16.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1207119242]
+
+[node name="Screenshot20261115115259" type="Sprite2D" parent="CanvasLayer" unique_id=212022686]
+position = Vector2(768.00006, 208.49997)
+scale = Vector2(1.2781955, 1.0486026)
+texture = ExtResource("1_u8o5d")
+
+[node name="Screenshot20261115115754" type="Sprite2D" parent="CanvasLayer/Screenshot20261115115259" unique_id=913941125]
+texture_filter = 1
+position = Vector2(-1.5646973, -7.1523438)
+scale = Vector2(1.5215415, 1.8546851)
+texture = ExtResource("2_hymk5")
